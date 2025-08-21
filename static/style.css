@@ -1,0 +1,210 @@
+/* style.css - No functional changes needed, just ensure file paths are correct */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0; /* Remove padding from body as billboard takes full width */
+    background-color: #f4f4f4;
+    color: #333;
+    /* Set background image */
+    /* Make sure your image file is in the static/images/ folder */
+    background-image: url('static/images/background.jpg'); /* <--- UPDATE this path to your image file if needed */
+    background-size: cover; /* Cover the entire background */
+    background-position: center center; /* Center the image */
+    background-attachment: fixed; /* Fix the background so it doesn't scroll with content */
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+    display: flex;
+    flex-direction: column; /* Arrange content in a column */
+    align-items: center; /* Center content horizontally */
+}
+
+.billboard {
+    width: 100%; /* Take full width */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay for text readability */
+    color: white;
+    padding: 50px 20px; /* Vertical and horizontal padding */
+    text-align: center;
+    margin-bottom: 20px; /* Space between billboard and the main container below it */
+    box-sizing: border-box; /* Include padding in the element's total width/height */
+}
+
+.billboard-content h1 {
+    color: white; /* Ensure title text is white */
+    margin: 0;
+    font-size: 48px; /* Larger font size for impact */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for better readability */
+}
+
+.billboard-content p {
+    margin-top: 10px;
+    font-size: 20px;
+    opacity: 0.9; /* Slightly transparent for a softer look */
+}
+
+
+.container {
+    background: #fff; /* White background for the main content area */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    width: 100%;
+    max-width: 600px; /* Limit the maximum width of the content area */
+    text-align: center;
+    margin-top: 20px; /* Space above the container */
+    margin-bottom: 20px; /* Space below the container */
+    box-sizing: border-box; /* Include padding in the element's total width/height */
+}
+
+/* Styling for form elements */
+h1 {
+    color: #5a5a5a; /* Dark gray for the main heading */
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left; /* Align labels and inputs to the left */
+}
+
+.form-group label {
+    display: block; /* Make labels take their own line */
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555; /* Slightly lighter gray for labels */
+}
+
+.form-group input[type="text"] {
+    width: calc(100% - 22px); /* Calculate width considering padding and border */
+    padding: 10px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    display: inline-block;
+    background-color: #5cb85c; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px;
+    border: none; /* No border */
+    border-radius: 4px;
+    cursor: pointer; /* Indicate clickable */
+    font-size: 18px;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+button[type="submit"]:hover {
+    background-color: #4cae4c; /* Darker green on hover */
+}
+
+/* Styling for search results area */
+#results-area {
+    margin-top: 30px;
+    text-align: left; /* Align results text to the left */
+    border-top: 1px solid #eee; /* Light gray line above results */
+    padding-top: 20px;
+}
+
+.restaurant-result {
+    background: #f9f9f9; /* Very light gray background for each result item */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px; /* Space between result items */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+.restaurant-result h3 {
+    margin-top: 0;
+    color: #337ab7; /* Blue color for restaurant names */
+    font-size: 20px;
+}
+
+.restaurant-result p {
+    margin: 5px 0;
+    font-size: 15px;
+    color: #666; /* Darker gray for general info */
+}
+
+.restaurant-result .rating {
+    font-weight: bold;
+    color: #f0ad4e; /* Orange color for ratings */
+}
+
+/* Styling for error messages */
+.error-message {
+    color: #d9534f; /* Red color for errors */
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+/* style.css */
+body {
+    background-image: url('backgroundfood.jpg'); /* FIXED: correct relative path */
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-image: url('backgroundfood.jpg'); /* CORRECT PATH */
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+}
+
+.billboard {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.billboard img {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.billboard-content h1 {
+    margin: 0;
+    font-size: 48px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.billboard-content p {
+    margin-top: 10px;
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+.container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}

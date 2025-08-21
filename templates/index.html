@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taste Finder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header class="billboard">
+        <img src="{{ url_for('static', filename='dishlogo.jpg') }}" alt="Taste Finder Logo">
+        <div class="billboard-content">
+            <h1>Taste Finder</h1>
+            <p>Your Guide to the Best Local Eats</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Find Delicious Food Near You</h1>
+        <form action="{{ url_for('find_restaurants') }}" method="get">
+            <div class="form-group">
+                <label for="cuisine">What are you craving?</label>
+                <input type="text" id="cuisine" name="cuisine_query" placeholder="e.g., sushi, pasta, pizza" value="{{ previous_cuisine_query or '' }}">
+            </div>
+
+            <div class="form-group">
+                <label for="location">Where are you?</label>
+                <input type="text" id="location" name="location_query" placeholder="e.g., city, neighborhood, address" value="{{ previous_location_query or '' }}">
+            </div>
+
+            <button type="submit">Search</button>
+        </form>
+
+        <div id="results-area">
+            {% if error %}
+                <p class="error-message">{{ error }}</p>
+            {% elif results is not none %}
+                {% if results %}
+                    <h2>Search Results</h2>
+                    {% for restaurant in results %}
+                        <div class="restaurant-result">
+                            <h3>{{ restaurant.get(NAME_COLUMN, 'Name N/A') }}</h3>
+                            <p>{{ restaurant.get(ADDRESS_COLUMN, 'Address N/A') }}</p>
+                            <p>
+                                {% if restaurant.get(RATING_COLUMN) is not none %}
+                                    <span class="rating">Rating: {{ restaurant.get(RATING_COLUMN, 'Rating N/A') }}</span>
+                                {% else %}
+                                    <span class="rating">Rating: N/A</span>
+                                {% endif %}
+                                {% if VOTES_COLUMN in restaurant and restaurant.get(VOTES_COLUMN) is not none %}
+                                    ({{ restaurant.get(VOTES_COLUMN) }} votes)
+                                {% endif %}
+                            </p>
+                            {% if CUISINE_COLUMN in restaurant and restaurant.get(CUISINE_COLUMN) != 'Cuisine N/A' %}
+                                <p>Cuisines: {{ restaurant.get(CUISINE_COLUMN) }}</p>
+                            {% endif %}
+                            {% if LOCATION_COLUMN in restaurant and restaurant.get(LOCATION_COLUMN) != 'Location N/A' %}
+                                <p>Location: {{ restaurant.get(LOCATION_COLUMN) }}</p>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No restaurants found for your search criteria in the dataset.</p>
+                {% endif %}
+            {% elif results is none and not error %}
+                <p>Enter cuisine and/or location above to find restaurants.</p>
+            {% endif %}
+        </div>
+    </div>
+
+</body>
+</html>
