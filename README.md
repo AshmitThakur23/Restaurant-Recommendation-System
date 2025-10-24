@@ -1,114 +1,119 @@
-# Restaurant Recommendation System 🍜✨
+# Restaurant Recommendation System 🍣🚀
 
-Craving something delicious? Tell the app what you want and where you are—get curated, high‑quality restaurant suggestions with ratings and key details. Built with Python + Flask, a clean responsive UI, and a clear data pipeline designed for growth.
+Tell me your craving and city, and I’ll serve up the best nearby restaurants with ratings and key details — fast. Built with Python + Flask, clean templates, and a tidy data pipeline that’s easy to extend to live APIs.
 
 [Open Repository](https://github.com/AshmitThakur23/Restaurant-Recommendation-System)
 
 ![Python](https://img.shields.io/badge/Python-60.7%25-3776AB?logo=python&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS-25%25-1572B6?logo=css3&logoColor=white)
 ![HTML](https://img.shields.io/badge/HTML-14.3%25-E34F26?logo=html5&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Portfolio%20Ready-success)
-![UX](https://img.shields.io/badge/Focus-Usability%20%26%20Speed-ff69b4)
+![Status](https://img.shields.io/badge/Status-Portfolio%20Ready-brightgreen)
+![Focus](https://img.shields.io/badge/Focus-UX%20%7C%20Speed%20%7C%20Clarity-ff69b4)
 
 ---
 
 ## Elevator Pitch ⏱️
 
-- 15 seconds to your first recommendation: open → type cuisine + city → see ranked results.  
-- Designed for recruiters to skim fast, with visuals, diagrams, and an architecture you can extend in minutes.  
-- Upgrade path to live APIs, maps, and analytics without rewriting the core.
+- 60 seconds from clone to first recommendation.
+- Recruiter-friendly: clear visuals, clean structure, and architecture diagrams.
+- Future-ready: swap CSV for a real API without rewriting the app.
 
 ---
 
-## Demo Gallery 📸
+## Demo Gallery (updated) 📸
 
-Filenames include spaces; they’re URL‑encoded so they render on GitHub.
+Old screenshots removed. These are the latest images currently in the repo root. Filenames contain spaces, so the paths are URL‑encoded to render on GitHub.
 
 <p align="center">
-  <img src="./Screenshot%202025-10-23%20222930.png" alt="Landing page with cuisine and location search" width="90%" />
+  <img src="./Screenshot%202025-10-23%20222930.png" alt="Landing page with cuisine and city search" width="90%" />
   <br/>
   <em>Landing — friendly search for cuisine + location.</em>
 </p>
 
 <p align="center">
-  <img src="./Screenshot%202025-10-23%20230047.png" alt="Search results ranked by rating and relevance" width="90%" />
+  <img src="./Screenshot%202025-10-23%20230053.png" alt="Search results ranked by rating and relevance" width="90%" />
   <br/>
-  <em>Results — curated list ranked by rating and match quality.</em>
+  <em>Results — ranked suggestions with ratings and tags.</em>
 </p>
 
 <p align="center">
-  <img src="./Screenshot%202025-10-23%20230053.png" alt="Restaurant details card with rating and tags" width="90%" />
+  <img src="./Screenshot%202025-10-23%20233608.png" alt="Filters and refined results" width="90%" />
+  <br/>
+  <em>Filters — refine by cuisine, budget, and more.</em>
+</p>
+
+<p align="center">
+  <img src="./Screenshot%202025-10-23%20233613.png" alt="Restaurant detail card and info" width="90%" />
   <br/>
   <em>Details — compact card with rating, cuisine, and quick info.</em>
 </p>
 
 <p align="center">
-  <img src="./Screenshot%202025-10-23%20230112.png" alt="Responsive mobile layout" width="90%" />
+  <img src="./Screenshot%202025-10-23%20233618.png" alt="Responsive view for mobile" width="90%" />
   <br/>
-  <em>Responsive — polished on desktop and mobile.</em>
+  <em>Responsive — polished experience on mobile and desktop.</em>
 </p>
 
 ---
 
-## Signature Features 🌈
+## Signature Features 🌟
 
 - 🔎 Natural queries: “spicy Indian,” “budget sushi,” “vegan brunch.”
-- ⭐ Smart ranking: rating → distance/relevance → price fit.
-- 🧭 Filters: cuisine, city, budget (easy to extend to delivery, open now).
-- 🧱 Clean Flask structure: `templates/`, `static/`, `app.py`, `zomato.csv`.
-- ⚡ Fast first run: no keys required; drop-in API later.
-- ♿ Accessible UI: labeled fields, keyboard reachability, high contrast.
+- ⭐ Smart ranking: rating ➜ cuisine relevance ➜ price fit.
+- 🧭 Filters: cuisine, city, budget.
+- ♿ Accessible UI: labeled inputs, keyboard navigation, readable contrast.
+- 🧱 Clean Flask layout: `templates/`, `static/`, `app.py`, `zomato.csv`.
 
 ---
 
-## System Overview (Unique Diagram) 🧠
+## System Overview 🧠
 
 ```mermaid
 flowchart TD
-  A[User: cuisine + city + (budget)] --> B[Flask Controller]
-  B --> C[Preprocess Query: normalize cuisine, tokenize]
-  C --> D[Data Access: zomato.csv]
-  D --> E[Filter: by city + cuisine match]
-  E --> F[Ranker: score = rating * relevance - price_penalty]
-  F --> G[Top K Results]
-  G --> H[templates/results.html]
-  B --> I[Log Minimal Metrics (optional)]
+  Q[User Query: cuisine + city + (budget)] --> C[Flask Controller]
+  C --> N[Normalize / tokenize]
+  N --> D[(zomato.csv)]
+  D --> F[Filter by city + cuisine]
+  F --> R[Rank: rating • relevance – price_penalty]
+  R --> K[Top K]
+  K --> V[templates/results.html]
 ```
 
-And the ranking “scorecard” at a glance:
+Ranking intuition:
 
 ```mermaid
-pie title Ranking Factors (relative contribution)
+pie title Ranking Factors
   "Rating" : 55
   "Cuisine Relevance" : 25
   "Budget Fit" : 15
-  "Other Signals" : 5
+  "Other" : 5
 ```
 
 ---
 
 ## Tech Stack ⚙️
 
-- Backend: Python (Flask, Jinja2 templates)
-- UI: HTML + CSS (responsive; extend with a CSS framework if desired)
-- Data: `zomato.csv` (demo dataset; can swap for live APIs)
-- Optional deps: `pandas` for filtering and ranking
+- Backend: Python (Flask, Jinja2)
+- UI: HTML + CSS (responsive; minimal JS)
+- Data: `zomato.csv` (swap for live APIs later)
+- Optional: `pandas` for fast filtering
 
 ---
 
-## Project Layout 📁
+## Project Structure 📁
 
 ```
 Restaurant-Recommendation-System/
 ├─ static/                 # CSS, images, JS
-├─ templates/              # Jinja2 templates (HTML)
-├─ app.py                  # Flask app (routes, controllers)
-├─ zomato.csv              # Sample dataset (local)
+├─ templates/              # Jinja2 templates
+├─ app.py                  # Flask routes & controllers
+├─ zomato.csv              # Sample dataset
 ├─ README.md
 ├─ Screenshot 2025-10-23 222930.png
-├─ Screenshot 2025-10-23 230047.png
 ├─ Screenshot 2025-10-23 230053.png
-└─ Screenshot 2025-10-23 230112.png
+├─ Screenshot 2025-10-23 233608.png
+├─ Screenshot 2025-10-23 233613.png
+└─ Screenshot 2025-10-23 233618.png
 ```
 
 ---
@@ -131,79 +136,37 @@ python3 -m venv .venv && source .venv/bin/activate
 
 3) Install dependencies
 ```bash
-# If requirements.txt exists, prefer it:
+# If requirements.txt exists:
 # pip install -r requirements.txt
 
-# Minimal stack:
+# Minimal:
 pip install flask pandas
 ```
 
 4) Run
 ```bash
 python app.py
-# Then open the URL printed in the console (e.g., http://127.0.0.1:5000/)
+# Open the URL shown in the terminal (commonly http://127.0.0.1:5000/)
 ```
-
-Time‑to‑first‑recommendation: ~1 minute on a fresh machine.
-
----
-
-## API/Integration‑Ready 🔌
-
-Swap the CSV for a live API (Zomato‑like or any food data source):
-
-```mermaid
-sequenceDiagram
-  participant UI as UI (form)
-  participant S as Flask Server
-  participant D as Data Provider (CSV/API)
-  UI->>S: GET /recommend?cuisine=thai&city=hyderabad&budget=mid
-  S->>D: Query data (CSV filter or External API)
-  D-->>S: Candidates
-  S->>S: Rank & format results
-  S-->>UI: Top K JSON/HTML
-```
-
-- Add a `.env` file for API keys (do not commit secrets).
-- Replace CSV fetch with requests to your provider.
-- Cache responses or pre-index to reduce latency.
-
----
-
-## Polished UX Details ✨
-
-- Placeholder hints: examples like “Paneer tikka in Pune”.
-- Defensive inputs: trims spaces, normalizes casing.
-- Empty‑state messages: friendly, with next‑step tips.
-- Mobile: comfortable tap targets, vertical rhythm, and readable line length.
 
 ---
 
 ## Extensibility Ideas 🧩
 
-- Map view (Leaflet/Mapbox) with distance and directions
-- “Open now” and “Delivery available” filters
-- Favorites and recent searches (local storage or DB)
-- Analytics dashboard (Chart.js: top cuisines, price vs. rating)
-- Dockerfile + CI/CD for one‑click deploy
+- Live API integration (Zomato-like or RapidAPI)
+- Map view (Leaflet/Mapbox) with distance & directions
+- Favorites, recent searches, and shareable links
+- Charts (Chart.js) for cuisine trends and budget vs. rating
+- Dockerfile + one‑click deploy (Render/Railway/Fly.io)
 
 ---
 
-## Quality Checklist ✅
+## Recruiter Highlights 💼
 
-- [x] Fast local spin‑up
-- [x] Clear structure and comments
-- [x] URL‑encoded screenshot paths
-- [x] No secret keys required for demo
-- [x] Accessible forms and contrast
-
----
-
-## FAQ ❓
-
-- “Do I need an API key?” → No, the demo runs on a local CSV.  
-- “How hard is it to switch to an API?” → Swap the data layer; keep filters/ranker.  
-- “Can I deploy quickly?” → Yes—Gunicorn + Render/Railway/Fly.io in minutes.
+- Practical, user-centered product with clear value
+- Clean Flask MVC‑style organization and templating
+- Sensible ranking logic and easily swappable data layer
+- Strong documentation and polished visuals
 
 ---
 
@@ -212,4 +175,4 @@ sequenceDiagram
 - Author: [Ashmit Thakur](https://github.com/AshmitThakur23)
 - Project: [Restaurant Recommendation System](https://github.com/AshmitThakur23/Restaurant-Recommendation-System)
 
-If this project made you hungry and happy, drop a ⭐—it helps more people discover it! 😄🍕
+If this project whetted your appetite, please ⭐ the repo — it helps others find it! 😄🍕
