@@ -22,8 +22,6 @@ Tell me your craving and city, and I’ll serve up the best nearby restaurants w
 
 ## Demo Gallery (updated) 📸
 
-Old screenshots removed. These are the latest images currently in the repo root. Filenames contain spaces, so the paths are URL‑encoded to render on GitHub.
-
 <p align="center">
   <img src="./Screenshot%202025-10-23%20222930.png" alt="Landing page with cuisine and city search" width="90%" />
   <br/>
